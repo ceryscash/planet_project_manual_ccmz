@@ -1,0 +1,21 @@
+type Query {
+  getUserById(id: Int!): MyUserDTO
+}
+
+type Mutation {
+  createUser(newUser: NewUserDTO!): MyUserDTO
+}
+
+input NewUserDTO {
+  username: String!
+  password: String!
+  role: String!
+}
+
+type MyUserDTO {
+  id: Int
+  username: String
+  role: String
+  enabled: Boolean
+  unlocked: Boolean
+}
